@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justine Mira | Shopify Product Lister | E-commerce Virtual Assistant | Data Entry Specialist</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
+/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #3B82F6;
+      --blue-light: #EFF6FF;
+      --blue-mid: #BFDBFE;
+      --gray: #6B7280;
+      --dark: #111827;
+      --white: #FFFFFF;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--blue-mid);
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-weight: 700; font-size: 1.1rem; color: var(--dark); }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: var(--gray); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--blue); text-decoration: none; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; max-width: 960px; margin: 0 auto; }
+    h2.section-title {
+      font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    .section-divider {
+      width: 48px; height: 4px; background: var(--blue);
+      border-radius: 2px; margin-bottom: 2.5rem;
+    }
+
+    /* HERO */
+#hero {
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 60%);
+  max-width: 100%;
+  padding: 7rem 2rem 5rem;
+}
+
+#hero .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--blue-mid);
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+#hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+#hero h1 span {
+  color: var(--blue);
+}
+
+#hero p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 620px;
+  margin-bottom: 2rem;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 360px;
+}
+
+.workflow-card {
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
+  position: absolute;
+}
+
+.main-card {
+  width: 300px;
+  right: 40px;
+  top: 60px;
+}
+
+.mini-card {
+  width: 210px;
+}
+
+.card-one {
+  left: 0;
+  top: 10px;
+}
+
+.card-two {
+  right: 0;
+  bottom: 35px;
+}
+
+.card-three {
+  left: 35px;
+  bottom: 0;
+}
+
+.workflow-card .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.workflow-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--dark);
+}
+
+.workflow-card p {
+  font-size: 0.85rem !important;
+  margin: 0;
+  color: var(--gray);
+}
+
+.status {
+  display: inline-block;
+  margin-top: 0.8rem;
+  background: var(--blue-light);
+  color: var(--blue);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  #hero .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .main-card {
+    right: 10px;
+  }
+}
+
+    .btn-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn {
+      padding: 0.75rem 1.5rem; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; border: none; display: inline-block;
+    }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: #2563EB; text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+    .btn-outline:hover { background: var(--blue-light); text-decoration: none; }
+
+    /* ABOUT */
+    #about p { color: var(--gray); margin-bottom: 1rem; font-size: 1rem; }
+    #about ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; margin: 1rem 0 1.5rem; }
+    #about ul li::before { content: "✦ "; color: var(--blue); }
+    #about ul li { color: var(--dark); font-size: 0.95rem; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .skill-card {
+      background: var(--blue-light); border: 1px solid var(--blue-mid);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .skill-card h3 { font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 1rem; }
+    .skill-card ul { list-style: none; }
+    .skill-card ul li { font-size: 0.9rem; color: var(--dark); padding: 0.25rem 0; border-bottom: 1px solid var(--blue-mid); }
+    .skill-card ul li:last-child { border-bottom: none; }
+
+    /* PORTFOLIO */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .portfolio-card {
+      border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .portfolio-card:hover { box-shadow: 0 8px 24px rgba(59,130,246,0.15); transform: translateY(-2px); }
+    .portfolio-img {
+      width: 100%; height: 180px;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 0.85rem; font-weight: 500;
+    }
+    .portfolio-body { padding: 1.25rem; }
+    .portfolio-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.88rem; color: var(--gray); }
+    .portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.portfolio-tags span {
+  background: #EFF6FF;
+  color: #3B82F6;
+  border: 1px solid #BFDBFE;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+
+    /* PROJECTS */
+    .project-item { border-left: 3px solid var(--blue); padding: 0 0 2rem 1.5rem; position: relative; }
+    .project-item:last-child { border-left-color: transparent; }
+    .project-item::before {
+      content: ''; position: absolute; left: -7px; top: 4px;
+      width: 12px; height: 12px; background: var(--blue); border-radius: 50%;
+    }
+    .project-item .year { font-size: 0.8rem; color: var(--blue); font-weight: 600; margin-bottom: 0.25rem; }
+    .project-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .project-item ul { list-style: disc; padding-left: 1.25rem; }
+    .project-item ul li { font-size: 0.92rem; color: var(--gray); margin-bottom: 0.25rem; }
+
+    /* WHY HIRE ME */
+    #why { background: var(--blue-light); max-width: 100%; }
+    #why .inner { max-width: 960px; margin: 0 auto; padding: 5rem 2rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .why-item {
+      background: var(--white); border: 1px solid var(--blue-mid);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.92rem; font-weight: 600;
+    }
+    .why-item span.check { color: var(--blue); font-size: 1.1rem; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .contact-item {
+      background: var(--blue-light); border: 1px solid var(--blue-mid);
+      border-radius: 10px; padding: 1.25rem;
+      display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .contact-icon { font-size: 1.4rem; }
+    .contact-item h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue); font-weight: 700; margin-bottom: 0.25rem; }
+    .contact-item p { font-size: 0.9rem; color: var(--dark); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); color: #9CA3AF;
+      text-align: center; padding: 2rem;
+      font-size: 0.88rem;
+    }
+    footer .quote { font-style: italic; color: var(--blue-mid); margin-bottom: 0.5rem; font-size: 0.95rem; }
+    footer .copy { font-size: 0.8rem; }
+
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      #hero h1 { font-size: 1.6rem; }
+    }
+
+    .portfolio-img {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #f8fafc;
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.portfolio-card:hover .portfolio-img img {
+  transform: scale(1.05);
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Justine Mira</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="inner">
+
+    <div class="hero-text">
+      <div class="hero-tag">Open to Work</div>
+
+      <h1>
+        Helping E-commerce Businesses<br>
+        <span>Organize, Upload, and Manage</span><br>
+        Products Efficiently
+      </h1>
+
+      <p>
+        I help Shopify store owners upload products, organize collections,
+        manage variants, update inventory, and create clean product listings
+        that are easy for customers to browse.
+      </p>
+
+      <div class="btn-group">
+        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="workflow-card mini-card card-one">
+        <div class="icon">📦</div>
+        <h3>Product Upload</h3>
+        <p>Titles, descriptions, images, prices, and product details.</p>
+      </div>
+
+      <div class="workflow-card main-card">
+        <div class="icon">🛒</div>
+        <h3>Shopify Product Setup</h3>
+        <p>Organized listings with variants, SKUs, tags, collections, and inventory.</p>
+        <span class="status">Published Successfully</span>
+      </div>
+
+      <div class="workflow-card mini-card card-two">
+        <div class="icon">🏷️</div>
+        <h3>Variants & SKUs</h3>
+        <p>Color, size, stock, and product organization.</p>
+      </div>
+
+      <div class="workflow-card mini-card card-three">
+        <div class="icon">🔍</div>
+        <h3>SEO Ready</h3>
+        <p>Clean titles, tags, and searchable product content.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="section-divider"></div>
+  <p>I am an aspiring Shopify Product Lister and E-commerce Virtual Assistant with hands-on experience using Shopify Admin through personal projects and development stores.</p>
+  <p>I specialize in:</p>
+  <ul>
+    <li>Product Upload and Management</li>
+    <li>Product Variants and SKUs</li>
+    <li>Data Entry and Quality Assurance</li>
+    <li>Product Categorization and Collections</li>
+    <li>Microsoft Excel and Google Sheets</li>
+    <li>Web Research</li>
+    <li>Administrative Support</li>
+    <li>SEO</li>
+
+  </ul>
+  <p>My background in software development and database management has strengthened my attention to detail, organization skills, and ability to quickly learn new systems and workflows.</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="section-divider"></div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>🛒 E-commerce</h3>
+      <ul>
+        <li>Product Listing</li>
+        <li>Product Upload</li>
+        <li>Product Variants</li>
+        <li>Collections</li>
+        <li>Product Categorization</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>🧰 Productivity Tools</h3>
+      <ul>
+        <li>Microsoft Excel</li>
+        <li>Google Sheets</li>
+        <li>Canva</li>
+        <li>Google Drive</li>
+        <li>ChatGPT</li>
+        <li>Notion</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h3>💻 Technical Skills</h3>
+      <ul>
+        <li>SQL &amp; MySQL</li>
+        <li>PHP</li>
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript</li>
+        <li>GitHub</li>
+        <li>VS Code</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2 class="section-title">Shopify Portfolio</h2>
+  <div class="section-divider"></div>
+
+  <div class="portfolio-grid">
+
+    <a href="portfolio/product-listing.php" class="portfolio-card">
+      <div class="portfolio-img">
+  <img src="images/banner.webp"
+       alt="Shopify Product Setup Case Study">
+</div>
+
+      <div class="portfolio-body">
+        <h3>Shopify Product Setup Case Study</h3>
+
+        <p>
+          Complete Shopify product setup in a development store including
+          product listing, variants, SKUs, collections, tags, metafields,
+          images, and SEO optimization.
+        </p>
+
+        <div class="portfolio-tags">
+          <span>Product Listing</span>
+          <span>Variants</span>
+          <span>Collections</span>
+          <span>Metafields</span>
+          <span>SEO</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="section-divider"></div>
+  <div class="project-item">
+    <div class="year">Present</div>
+    <h3>Personal Shopify Development Store</h3>
+    <ul>
+      <li>Created and managed products in Shopify Admin.</li>
+      <li>Uploaded product images and descriptions.</li>
+      <li>Created variants and SKUs.</li>
+      <li>Organized products into collections.</li>
+      <li>Practiced inventory management.</li>
+      <li>Configured product metafields and categories.</li>
+      <li>Learned Shopify product workflows and store management.</li>
+    </ul>
+  </div>
+  <div class="project-item">
+    <div class="year">Jan 2024 – May 2026</div>
+    <h3>Freelance Web Developer</h3>
+    <ul>
+      <li>Developed ERP and POS systems.</li>
+      <li>Built reporting systems.</li>
+      <li>Automated workflows and data management.</li>
+      <li>Improved operational efficiency.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHY HIRE ME -->
+<div id="why">
+  <div class="inner">
+    <h2 class="section-title">Why Hire Me</h2>
+    <div class="section-divider"></div>
+    <div class="why-grid">
+      <div class="why-item"><span class="check">✔</span> Detail-Oriented</div>
+      <div class="why-item"><span class="check">✔</span> Fast Learner</div>
+      <div class="why-item"><span class="check">✔</span> Highly Organized</div>
+      <div class="why-item"><span class="check">✔</span> Tech-Savvy</div>
+      <div class="why-item"><span class="check">✔</span> Strong Data Accuracy</div>
+      <div class="why-item"><span class="check">✔</span> Excellent Communication Skills</div>
+      <div class="why-item"><span class="check">✔</span> Quick Adaptation to New Systems</div>
+      <div class="why-item"><span class="check">✔</span> Committed to High-Quality Work</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="section-divider"></div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <h4>Email</h4>
+        <p><a href="mailto:mirajustine17@gmail.com">mirajustine17@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <h4>Location</h4>
+        <p>Philippines</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💼</div>
+      <div>
+        <h4>OnlineJobs.ph</h4>
+        <p><a href="https://v2.onlinejobs.ph/jobseekers/info/4667085">Profile Link</a></p>
+      </div>
+    </div>
+    
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="quote">"Helping businesses save time and stay organized through accurate product management and data entry."</p>
+  <p class="copy">&copy; 2026 Justine Mira. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+
+</body>
+</html>

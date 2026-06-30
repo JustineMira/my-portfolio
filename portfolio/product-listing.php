@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Listing | Justine Mira</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />
+
+  <style>
+    :root{
+      --blue:#3B82F6; --blue-light:#EFF6FF; --blue-mid:#BFDBFE;
+      --gray:#6B7280; --dark:#111827; --white:#FFFFFF;
+    }
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--dark);line-height:1.7;margin:0}
+    a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:960px;margin:0 auto;padding:4rem 2rem}
+    .title{font-size:2rem;font-weight:800;line-height:1.2;margin:0 0 0.75rem}
+    .subtitle{color:var(--gray);max-width:760px;margin:0 0 1.25rem}
+    .badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0 2rem}
+    .badge{background:var(--blue-light);border:1px solid var(--blue-mid);color:var(--blue);
+      padding:0.25rem 0.7rem;border-radius:999px;font-size:0.8rem;font-weight:700}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .card{background:var(--white);border:1px solid #E5E7EB;border-radius:12px;padding:1.25rem}
+    .card h3{margin:0 0 0.75rem;font-size:1rem}
+    .meta{display:grid;gap:0.35rem;color:var(--gray);font-size:0.92rem}
+    .meta b{color:var(--dark)}
+    .section{margin-top:2rem}
+    .section h2{font-size:1.25rem;margin:0 0 0.75rem}
+    .divider{width:48px;height:4px;background:var(--blue);border-radius:2px;margin:0 0 1.25rem}
+    ul{margin:0;padding-left:1.2rem}
+    .steps li{margin-bottom:0.35rem}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem}
+    .shot{
+      border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;background:var(--blue-light);
+      min-height:160px;display:flex;align-items:center;justify-content:center;color:var(--blue);
+      font-weight:600;font-size:0.9rem
+    }
+    .btn-row{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2.5rem}
+    .btn{display:inline-block;padding:0.75rem 1.25rem;border-radius:10px;font-weight:700}
+    .btn-primary{background:var(--blue);color:var(--white)}
+    .btn-outline{border:2px solid var(--blue);color:var(--blue);background:transparent}
+    .note{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:12px;padding:1rem;color:var(--gray);font-size:0.92rem}
+
+    @media(max-width:700px){ .grid-2{grid-template-columns:1fr} }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item .shot {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  transition: all .3s ease;
+  text-decoration: none;
+}
+
+.gallery-item .shot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gallery-item span {
+  display: block;
+  padding: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <!-- HERO -->
+    <h1 class="title">Shopify Product Listing Sample</h1>
+    <p class="subtitle">
+      Practice project demonstrating a complete Shopify product setup: optimized product info,
+      variants/SKUs, collections/tags, images, and SEO fields—following a consistent formatting checklist.
+    </p>
+
+    <div class="badge-row">
+      <span class="badge">Shopify Admin</span>
+      <span class="badge">Product Upload</span>
+      <span class="badge">Variants + SKUs</span>
+      <span class="badge">Collections + Tags</span>
+      <span class="badge">SEO</span>
+      <span class="badge">QA Checklist</span>
+    </div>
+
+    <!-- QUICK DETAILS -->
+    <div class="grid-2">
+      <div class="card">
+        <h3>Quick Details</h3>
+        <div class="meta">
+          <div><b>Platform:</b> Shopify</div>
+          <div><b>Type:</b> Practice / Development Store</div>
+          <div><b>Scope:</b> 30 products (20 for Toys & 10 for Women's Fashion)</div>
+          <div><b>Includes:</b> Title, description, images, variants, tags/collections, SEO</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tools Used</h3>
+        <div class="meta">
+          <div><b>Shopify Admin</b> (product setup)</div>
+          <div><b>Google Sheets</b> (data prep / tracking)</div>
+          <div><b>Canva</b> (image resize/clean-up)</div>
+          <div><b>ChatGPT</b> (SEO Friendly Descriptions & Tags)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBJECTIVE -->
+    <section class="section">
+      <h2>Objective</h2>
+      <div class="divider"></div>
+      <p>
+        Create a clean, conversion-friendly Shopify product listing with accurate product data,
+        consistent formatting, correct variants/SKUs, organized tags/collections, and completed SEO fields.
+      </p>
+    </section>
+
+    <!-- WHAT I DID -->
+    <section class="section">
+      <h2>What I Did</h2>
+      <div class="divider"></div>
+      <ul class="steps">
+        <li>Prepared product details in a sheet (title, price, SKU, vendor, product type, tags).</li>
+        <li>Created the product in Shopify Admin and formatted the description (benefits + specs).</li>
+        <li>Set up variants/options (e.g., size/color) and assigned SKUs per variant.</li>
+        <li>Added collections and tags using a consistent naming system.</li>
+        <li>Uploaded images, arranged image order, and checked display on product page.</li>
+        <li>Filled SEO fields (meta title + meta description) and did a final QA pass.</li>
+      </ul>
+    </section>
+
+<section class="section">
+  <h2>Sample Product Setup</h2>
+  <div class="divider"></div>
+
+  <div class="card">
+    <div class="meta">
+      <div><b>Product:</b> Tiered Surplice Midi Dress</div>
+
+      <div><b>Vendor:</b> trendsi </div>
+
+      <div><b>Product Type:</b> Women's Midi Dress</div>
+
+      <div><b>Variants:</b> Colors: Beige, Black, Sage Green / Sizes: S, M, L, XL</div>
+
+      <div><b>Sample SKUs:</b></div>
+      <ul>
+        <li>TSD-ERG</li>
+      
+      </ul>
+
+      <div><b>Collections:</b> New Arrivals, Midi Dresses, Summer Collection, Women's Fashion</div>
+
+      <div><b>Tags:</b> tiered midi dress, surplice dress, wrap dress, smocked waist dress, beige dress, summer dress, elegant dress, women's fashion</div>
+
+      <div><b>SEO Title:</b> Women's Tiered Surplice Midi Dress | Elegant Smocked Waist Dress</div>
+
+      <div><b>SEO URL:</b> womens-tiered-surplice-midi-dress</div>
+
+      <div><b>Meta Description:</b> Shop this elegant tiered surplice midi dress featuring a flattering wrap neckline, smocked waist, and flowing skirt. Perfect for brunches, garden parties, vacations, and special occasions.</div>
+
+      <div><b>Inventory:</b> Tracked</div>
+
+      <div><b>Stock Quantity:</b> 42 Units</div>
+
+      <div><b>Price:</b> $44.99</div>
+
+    </div>
+  </div>
+</section>
+
+   <section class="section">
+  <h2>Screenshot Gallery</h2>
+  <div class="divider"></div>
+
+  <div class="gallery">
+
+    <!-- Box 1 -->
+    <div class="gallery-item">
+  <a class="shot" data-fancybox="overview" href="../images/overview1.png">
+    <img src="../images/overview1.png" alt="Shopify Editor Overview">
+    <span>Shopify Products (Overview)</span>
+  </a>
+
+  <div hidden>
+    <a data-fancybox="overview" href="../images/overview2.png"></a>
+    <a data-fancybox="overview" href="../images/overview3.png"></a>
+
+  </div>
+</div>
+
+  <!-- Box 2 -->
+<div class="gallery-item">
+  <a class="shot" data-fancybox="variants" href="../images/variant1.png">
+    <img src="../images/variant1.png" alt="Variants + SKUs">
+    <span>Variants + SKUs</span>
+  </a>
+
+  <div hidden>
+    <a data-fancybox="variants" href="../images/variant2.png"></a>
+    <a data-fancybox="variants" href="../images/variant3.png"></a>
+    <a data-fancybox="variants" href="../images/variant4.png"></a>
+  </div>
+</div>
+
+<!-- Box 3 -->
+<div class="gallery-item">
+  <a class="shot" data-fancybox="collections" href="../images/tags1.png">
+    <img src="../images/tags1.png" alt="Collections + Tags">
+    <span>Product Organization (Collections & Tags)</span>
+  </a>
+
+  <div hidden>
+    <a data-fancybox="collections" href="../images/tags2.png"></a>
+    <a data-fancybox="collections" href="../images/tags3.png"></a>
+    <a data-fancybox="collections" href="../images/tags7.png"></a>
+    <a data-fancybox="collections" href="../images/tags8.png"></a>
+    <a data-fancybox="collections" href="../images/tags9.png"></a>
+
+  </div>
+</div>
+
+<!-- Box 4 
+<div class="gallery-item">
+  <a class="shot" data-fancybox="seo" href="../images/seo1.png">
+    <img src="../images/seo1.png" alt="SEO Fields">
+    <span>SEO Fields</span>
+  </a>
+
+  <div hidden>
+    <a data-fancybox="seo" href="../images/seo2.png"></a>
+    <a data-fancybox="seo" href="../images/seo3.png"></a>
+  </div>
+</div>
+-->
+
+<!-- Box 5 -->
+<div class="gallery-item">
+  <a class="shot" data-fancybox="spreadsheet" href="../images/csv.png">
+    <img src="../images/csv.png" alt="Spreadsheet Management">
+    <span>Spreadsheet Management</span>
+  </a>
+
+  <div hidden>
+    <a data-fancybox="spreadsheet" href="../images/csv1.png"></a>
+    <a data-fancybox="spreadsheet" href="../images/spreadsheet3.png"></a>
+    <a data-fancybox="spreadsheet" href="../images/spreadsheet4.png"></a>
+  </div>
+</div>
+
+  </div>
+
+  <p class="note" style="margin-top:1rem">
+    Note: Screenshots are from a practice/development store.
+  </p>
+</section>
+
+
+    <!-- QA CHECKLIST -->
+    <section class="section">
+      <h2>QA Checklist (Accuracy)</h2>
+      <div class="divider"></div>
+      <ul class="steps">
+        <li>All required fields completed (title, vendor, product type, price, status).</li>
+        <li>Variant options mapped correctly (no missing sizes/colors).</li>
+        <li>SKUs unique and consistent per variant.</li>
+        <li>Collections/tags follow naming rules (no duplicates).</li>
+        <li>Images ordered consistently and display properly on mobile.</li>
+        <li>SEO meta title + meta description filled and readable.</li>
+      </ul>
+    </section>
+
+    <!-- BUTTONS -->
+    <div class="btn-row">
+      <a class="btn btn-primary" href="../index.php#portfolio">← Back to Portfolio</a>
+      <a class="btn btn-outline" href="../index.html#contact">Contact</a>
+    </div>
+  </main>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+
+<script>
+  Fancybox.bind("[data-fancybox]", {
+    Thumbs: false,
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ["close"],
+      },
+    },
+  });
+</script>
+
+</body>
+</html>
