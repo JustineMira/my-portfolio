@@ -230,6 +230,8 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 .portfolio-tags span {
@@ -310,6 +312,26 @@
 
 .portfolio-card:hover .portfolio-img img {
   transform: scale(1.05);
+}
+
+
+.portfolio-btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.portfolio-card:hover .portfolio-btn {
+  background: #2563eb;
+  transform: translateY(-2px);
 }
   </style>
 </head>
@@ -476,6 +498,11 @@
           <span>Inventory</span>
           <span>SEO</span>
         </div>
+      
+        <div class="portfolio-btn">
+  View Case Study →
+</div>
+
       </div>
     </a>
 
@@ -496,7 +523,6 @@
 
     <div class="portfolio-tags">
       <span>Product Listing</span>
-      <span>Women's Fashion</span>
       <span>Variants</span>
       <span>Collections</span>
       <span>Tags</span>
@@ -504,6 +530,11 @@
       <span>Inventory</span>
       <span>SEO</span>
     </div>
+
+    <div class="portfolio-btn">
+  View Case Study →
+</div>
+
   </div>
 </a>
 
